@@ -21,7 +21,7 @@ from matplotlib.patches import FancyArrowPatch
 
 
 def visualize_data(data1, data2):
-    """ Create a 3D plot for data visualization """
+    """Create a 3D plot for data visualization"""
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(111, projection="3d")
     plt.rcParams["legend.fontsize"] = 10
@@ -56,7 +56,7 @@ def visualize_data(data1, data2):
 
 
 class Arrow3D(FancyArrowPatch):
-    """ Arrow graphics class """
+    """Arrow graphics class"""
 
     def __init__(self, xs, ys, zs, *args, **kwargs):
         FancyArrowPatch.__init__(self, (0, 0), (0, 0), *args, **kwargs)
@@ -70,7 +70,7 @@ class Arrow3D(FancyArrowPatch):
 
 
 def visualize_eigen(data, eig_vec_sc):
-    """ Create 3D representation of the eigenvectors computed """
+    """Create 3D representation of the eigenvectors computed"""
     # separate mean vector components
     mean_x = np.mean(data[0, :])
     mean_y = np.mean(data[1, :])
@@ -105,9 +105,9 @@ def visualize_eigen(data, eig_vec_sc):
 
 def visulize_pca(transformed):
     """
-        2D visualization of the principal components to evidence the dimensionality reduction.
-        The markers shows different classes of the original normalized_distributed_data().
-        Its valuable to notice that class classification is not made by the PCA.
+    2D visualization of the principal components to evidence the dimensionality reduction.
+    The markers shows different classes of the original normalized_distributed_data().
+    Its valuable to notice that class classification is not made by the PCA.
     """
     plt.plot(
         transformed[0, 0:20],
@@ -139,7 +139,7 @@ def visulize_pca(transformed):
 
 # Data Generation ------------------------------------------------------------
 def normalized_distributed_data(mean_value):
-    """ Generate 3x20 datasets for PCA """
+    """Generate 3x20 datasets for PCA"""
     # mean vector
     mu_vec1 = mean_value * np.ones(3)
     # covariance matrix
@@ -153,8 +153,8 @@ def normalized_distributed_data(mean_value):
 # PCA subroutines -----------------------------------------------------------
 def generate_data():
     """
-        Combine two 3x20 datasets ignoring their labels.
-        This is the data which will be analyzed by the PCA algorithm
+    Combine two 3x20 datasets ignoring their labels.
+    This is the data which will be analyzed by the PCA algorithm
     """
     # generate a mean 0 data
     class1_sample = normalized_distributed_data(0)
@@ -169,7 +169,7 @@ def generate_data():
 
 
 def compute_mean_vector(data):
-    """ Compute the mean vector for the dataset """
+    """Compute the mean vector for the dataset"""
     mean_x = np.mean(data[0, :])
     mean_y = np.mean(data[1, :])
     mean_z = np.mean(data[2, :])
@@ -181,7 +181,7 @@ def compute_mean_vector(data):
 
 
 def compute_scatter_matrix(data, mean_vector):
-    """ Compute scatter matrix values """
+    """Compute scatter matrix values"""
     scatter_matrix = np.zeros((3, 3))
     for i in range(data.shape[1]):
         scatter_matrix += (data[:, i].reshape(3, 1) - mean_vector).dot(
@@ -192,7 +192,7 @@ def compute_scatter_matrix(data, mean_vector):
 
 
 def compute_covariance_matrix(data):
-    """ Compute covariance matrix, an alternative to scatter matrix """
+    """Compute covariance matrix, an alternative to scatter matrix"""
     cov_mat = np.cov([data[0, :], data[1, :], data[2, :]])
     print("Covariance Matrix:\n", cov_mat)
     return cov_mat
@@ -200,8 +200,8 @@ def compute_covariance_matrix(data):
 
 def verify_eigen_values(scatter_matrix, eig_val_sc, eig_vec_sc):
     """
-        Verify if the eigen values of the scatter matrix were made correctly.
-        Test consists in asserting that the covariance and eigen vector product equals the eigen value and eigen vector.
+    Verify if the eigen values of the scatter matrix were made correctly.
+    Test consists in asserting that the covariance and eigen vector product equals the eigen value and eigen vector.
     """
     for i in range(len(eig_val_sc)):
         eigv = eig_vec_sc[:, i].reshape(1, 3).T
@@ -219,7 +219,7 @@ def verify_eigen_values(scatter_matrix, eig_val_sc, eig_vec_sc):
 
 
 def compute_eigen(scatter_matrix, cov_mat):
-    """ Compute eigen vectors and corresponding eigen values for the scatter and covariance matrix """
+    """Compute eigen vectors and corresponding eigen values for the scatter and covariance matrix"""
     # eigenvectors and eigenvalues for the from the scatter matrix
     eig_val_sc, eig_vec_sc = np.linalg.eig(scatter_matrix)
 
@@ -245,8 +245,8 @@ def compute_eigen(scatter_matrix, cov_mat):
 
 def sort_eigen_vectors(eigen_vec, eigen_val):
     """
-        Sort eigen vectors by decreasing eigenvalues.
-        Eigen vectors with lower eigenvalues hold less information about the data distribution.
+    Sort eigen vectors by decreasing eigenvalues.
+    Eigen vectors with lower eigenvalues hold less information about the data distribution.
     """
     # Make a list of (eigenvalue, eigenvector) tuples
     eig_pairs = [(np.abs(eigen_val[i]), eigen_vec[:, i]) for i in range(len(eigen_val))]
@@ -264,8 +264,8 @@ def sort_eigen_vectors(eigen_vec, eigen_val):
 
 def get_2_largest_eigen_vectors(eigen_vec, eigen_val):
     """
-        Return 2 principal components eigen vectors.
-        The decision of which vectors are principals is made by their sorting
+    Return 2 principal components eigen vectors.
+    The decision of which vectors are principals is made by their sorting
     """
     eig_pairs = sort_eigen_vectors(eigen_vec, eigen_val)
     # combine the two highest eigen vectors into matrix_w
@@ -275,14 +275,14 @@ def get_2_largest_eigen_vectors(eigen_vec, eigen_val):
 
 
 def principal_subspace_transformation(data, matrix_w):
-    """ Transform data into a new subspace through the equation: transformed = matrix_w' * data """
+    """Transform data into a new subspace through the equation: transformed = matrix_w' * data"""
     transformed = matrix_w.T.dot(data)
     assert transformed.shape == (2, 40), "The matrix is not 2x40 dimensional."
     return transformed
 
 
 def main():
-    """ Main function to perform Principal Component Analysis"""
+    """Main function to perform Principal Component Analysis"""
     # 1. Take the whole dataset consisting of dd-dimensional samples ignoring the class labels
     all_samples = generate_data()
     # 2. Compute the dd-dimensional mean vector (i.e., the means for every dimension of the whole dataset)

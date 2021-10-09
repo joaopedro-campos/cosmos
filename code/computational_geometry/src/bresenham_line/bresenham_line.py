@@ -1,15 +1,15 @@
 def calc_del(x1, x2, y1, y2):
     """
-        Calculate the delta values for x and y co-ordinates
+    Calculate the delta values for x and y co-ordinates
     """
     return x2 - x1, y2 - y1
 
 
 def bresenham(x1, y1, x2, y2):
     """
-        Calculate the co-ordinates for Bresehnam lines
-        bresenham(x1, y1, x2, y2)
-        returns a list of tuple of points
+    Calculate the co-ordinates for Bresehnam lines
+    bresenham(x1, y1, x2, y2)
+    returns a list of tuple of points
     """
     swap = False
 

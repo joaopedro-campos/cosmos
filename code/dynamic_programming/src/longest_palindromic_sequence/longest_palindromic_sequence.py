@@ -2,7 +2,7 @@
 
 
 def longest_palindrome(text):
-    """ Find the maximum length of a palindrome subsequence
+    """Find the maximum length of a palindrome subsequence
 
     Dynamic Programming approach on solving the longest palindromic sequence.
     Time complexity: O(n^2), n = length of text.
@@ -42,7 +42,7 @@ def longest_palindrome(text):
 
 
 def main():
-    """ Main routine to test longest_palindrome funtion """
+    """Main routine to test longest_palindrome funtion"""
     print(longest_palindrome("bbabcbcab"))  # 7: babcbab | bacbcab
     print(longest_palindrome("abbaab"))  # 4: abba | baab
     print(longest_palindrome("opengenus"))  # 3: ene | ege | ngn | nen

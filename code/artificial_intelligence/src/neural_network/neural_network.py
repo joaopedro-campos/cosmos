@@ -4,7 +4,7 @@
 import numpy as np
 import dill
 
-# Create a class 
+# Create a class
 class neural_network:
     def __init__(self, num_layers, num_nodes, activation_function, cost_function):
         self.num_layers = num_layers
@@ -35,7 +35,7 @@ class neural_network:
             print("Error: ", self.error)
         dill.dump_session(filename)
 
-    # Feedforward function 
+    # Feedforward function
     def forward_pass(self, inputs):
         self.layers[0].activations = inputs
         for i in range(self.num_layers - 1):
@@ -61,7 +61,7 @@ class neural_network:
     def relu(self, layer):
         layer[layer < 0] = 0
         return layer
-    
+
     # Create mathematical softmax function
     def softmax(self, layer):
         exp = np.exp(layer)
@@ -108,7 +108,7 @@ class neural_network:
                 )
             )
 
-    # Back propagation function 
+    # Back propagation function
     # NOTE: This is the most important part of a neural network by application of calculus and the chain rule
     def back_pass(self, labels):
         # if self.cost_function == "cross_entropy" and self.layers[self.num_layers-1].activation_function == "softmax":
@@ -170,6 +170,7 @@ class neural_network:
 
     def load_model(self, filename):
         dill.load_session(filename)
+
 
 # Class for each layer used in the network
 class layer:

@@ -1,8 +1,8 @@
 class Bag:
     """
-  Create a collection to add items and iterate over it.
-  There is no method to remove items.
-  """
+    Create a collection to add items and iterate over it.
+    There is no method to remove items.
+    """
 
     # Initialize a bag as a list
     def __init__(self):

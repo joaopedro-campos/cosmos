@@ -116,10 +116,10 @@ class GameState(object):
 
     def next_states_and_moves(self):
         """
-		return a list of tuples, where each tuple contains:
-			- a state immediately reachable from the current game state
-			- another tuple with the x and y coordinates of the move required to create that state
-		"""
+        return a list of tuples, where each tuple contains:
+                - a state immediately reachable from the current game state
+                - another tuple with the x and y coordinates of the move required to create that state
+        """
         states = []
         for y in range(self.n):
             for x in range(self.n):
@@ -133,12 +133,12 @@ class GameState(object):
 
     def evaluate(self, symbol):
         """
-		return an estimate of how desirable of a position this position is (for the player with the provided symbol)
-		for each player, this heuristic looks at each row, column, and diagonal; if the row/column/diagonal is not obstructed
-		by pieces belonging to the other player, the player's value is increased according to how many pieces they have on that
-		row/column/diagonal
-		the overall value is the player's value minus the opponent's value
-		"""
+        return an estimate of how desirable of a position this position is (for the player with the provided symbol)
+        for each player, this heuristic looks at each row, column, and diagonal; if the row/column/diagonal is not obstructed
+        by pieces belonging to the other player, the player's value is increased according to how many pieces they have on that
+        row/column/diagonal
+        the overall value is the player's value minus the opponent's value
+        """
         other_symbol = "X" if symbol == "O" else "O"
 
         player_total = 0
@@ -280,8 +280,8 @@ class GameDriver(object):
 
     def computer_move(self):
         """
-		pick first possible move from list of states
-		"""
+        pick first possible move from list of states
+        """
 
         delay = 0.5
         print("Thinking...")

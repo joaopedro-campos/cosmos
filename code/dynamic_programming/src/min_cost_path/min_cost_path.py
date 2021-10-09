@@ -2,7 +2,7 @@
 
 
 def minCost(costMatrix, m, n, traceback=True):
-    """Given a cost matrix and calculate the minimum cost path to reach (m, n) 
+    """Given a cost matrix and calculate the minimum cost path to reach (m, n)
     from (0, 0).
     """
 

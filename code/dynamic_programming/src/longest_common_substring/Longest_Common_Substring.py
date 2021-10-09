@@ -1,7 +1,4 @@
-def LongestCommonSubstring(
-    string1, 
-    string2
-):
+def LongestCommonSubstring(string1, string2):
     # longest string is string1 and the smallest string is string2
     if len(string2) > len(string1):
         temp = string2
@@ -26,9 +23,7 @@ def LongestCommonSubstring(
     for i in range(1, m + 1):
         for j in range(1, n + 1):
             if string1[i - 1] == string2[j - 1]:
-                consqRow[curr][j] = (
-                    consqRow[1 - curr][j - 1] + 1
-                )
+                consqRow[curr][j] = consqRow[1 - curr][j - 1] + 1
                 if consqRow[curr][j] > maxlength:
                     maxlength = consqRow[curr][j]
                     end = i - 1
@@ -49,7 +44,7 @@ def main():
     string1 = input()
     print("Enter String2: ")
     string2 = input()
-    
+
     print("String1:", string1)
     print("String2:", string2)
 
@@ -65,6 +60,7 @@ def main():
             len(common),
             ")",
         )
+
 
 if __name__ == "__main__":
     main()

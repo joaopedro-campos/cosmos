@@ -2,7 +2,7 @@ import random
 
 
 class Node:
-    """ Simple node class for A* pathfinding """
+    """Simple node class for A* pathfinding"""
 
     def __init__(self, parent=None, position=None):
         self.parent = parent
@@ -28,7 +28,7 @@ def make(n):
 
 
 def astar(maze, start, end):
-    """ Returns a list of tuples as a path from the given end in the given maze"""
+    """Returns a list of tuples as a path from the given end in the given maze"""
 
     # Defining a start and end Node
     start_node = Node(None, start)

@@ -15,7 +15,7 @@ def SGsom(a, b):
 
 
 def quickSort(array, left, right):
-    """ A simple Quick Sorting program"""
+    """A simple Quick Sorting program"""
     i = left
     j = right
     pivot = array[(left + right) / 2]

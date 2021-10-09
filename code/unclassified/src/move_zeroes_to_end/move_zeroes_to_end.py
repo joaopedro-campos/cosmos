@@ -9,7 +9,7 @@ for i in range(len(ar)):
         j += 1
 print("Final Array: ", *lis)
 
-# INPUT: 
+# INPUT:
 # Enter the elements: 0 2 3 0 5 0
 
 # OUTPUT:

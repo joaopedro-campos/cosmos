@@ -189,12 +189,13 @@ def ListAmplitudes(register):
 
 ### hadamard(lambda_x, QBit): Returns the codomain array after appending the Quantum Mapping of the QBits.
 
+
 def hadamard(x, Q):
     codomainarr = []
     for y in range(Q):
         amplitude = complex(pow(-1.0, bitCount(x & y) & 1))
         codomainarr.append(QuantumMapping(y, amplitude))
-    
+
     return codomainarr
 
 

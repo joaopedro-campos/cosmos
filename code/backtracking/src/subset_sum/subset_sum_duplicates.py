@@ -2,11 +2,11 @@ def combinationSum(candidates, target):
     """
     Problem description:
 
-    Given a set of candidate numbers (C) (without duplicates) and a target number (T), 
+    Given a set of candidate numbers (C) (without duplicates) and a target number (T),
     find all unique combinations in C where the candidate numbers sums to T.
 
     The same repeated number may be chosen from C unlimited number of times.
-    
+
     Args:
         candidates: list of pickable integers
         target: target sum
@@ -23,7 +23,7 @@ def backtrack(pos, candidates, target, currentSum, result_set, sequence):
     """
     Helper function for backtracking. Initially does a DFS traversal on each
     index to check all combinations of subsets to see if they sum to the target
-    sum. 
+    sum.
 
     Args:
         pos: current pivot index

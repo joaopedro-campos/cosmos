@@ -13,7 +13,7 @@ def wireshark_open(filename):
 
     """
     Global Header
-    
+
     typedef struct pcap_hdr_s {
         guint32 magic_number;   /* magic number */ (4 bytes) I
         guint16 version_major;  /* major version number */ (2 bytes) H
@@ -37,9 +37,9 @@ def wireshark_open(filename):
 
 def wireshark_write(file_object, data):
 
-    """ 
+    """
     Record (Packet) Header
-    
+
     typedef struct pcaprec_hdr_s {
         guint32 ts_sec;         /* timestamp seconds */ (4 bytes)
         guint32 ts_usec;        /* timestamp microseconds */ (4 bytes)
@@ -155,17 +155,17 @@ def met_tcp_header(recv, tam):
 def met_udp_header(recv, tam):
 
     """
-     0      7 8     15 16    23 24    31  
-         +--------+--------+--------+--------+ 
-         |     Source      |   Destination   | 
-         |      Port       |      Port       | 
-         +--------+--------+--------+--------+ 
-         |                 |                 | 
-         |     Length      |    Checksum     | 
-         +--------+--------+--------+--------+ 
-         |                                     
-         |          data octets ...            
-         +---------------- ...       
+    0      7 8     15 16    23 24    31
+        +--------+--------+--------+--------+
+        |     Source      |   Destination   |
+        |      Port       |      Port       |
+        +--------+--------+--------+--------+
+        |                 |                 |
+        |     Length      |    Checksum     |
+        +--------+--------+--------+--------+
+        |
+        |          data octets ...
+        +---------------- ...
     """
     udp_header = struct.unpack("!4H", recv[:8])
     source_port = udp_header[0]
@@ -187,7 +187,7 @@ def met_udp_header(recv, tam):
 
 def met_ip_header(recv):
 
-    """ 
+    """
     0                   1                   2                   3
     0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
     +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -299,7 +299,7 @@ def met_ethernet_header(recv):
 def main():
 
     """Convert 16-bit positive integers from host to network byte order. On machines
-    where the host byte order is the same as network byte order, this is a no-op; otherwise, 
+    where the host byte order is the same as network byte order, this is a no-op; otherwise,
     it performs a 2-b
     yte swap operation."""
     """socket.PF_PACKET to send and recieve messages, below the internet protocol layer

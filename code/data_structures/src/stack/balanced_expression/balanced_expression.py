@@ -1,4 +1,5 @@
-OPENING = '('
+OPENING = "("
+
 
 def is_balanced(parentheses):
     stack = []
@@ -13,7 +14,7 @@ def is_balanced(parentheses):
     return len(stack) == 0  # false if too many opening parens
 
 
-s = '((()))'
+s = "((()))"
 if is_balanced(s):
     print("string is balanced")
 else:

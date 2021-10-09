@@ -5,8 +5,8 @@ class node:
         self.right = None
         self.height = 1
 
-class AVL:
 
+class AVL:
     def height(self, Node):
         if Node is None:
             return 0
@@ -22,7 +22,7 @@ class AVL:
     def rotateR(self, Node):
         a = Node.left
         b = a.right
-					
+
         a.right = Node
         Node.left = b
         Node.height = 1 + max(self.height(Node.left), self.height(Node.right))
@@ -44,43 +44,42 @@ class AVL:
         elif val <= root.value:
             print("\n%s Inserted as Left Child of %s" % (val, root.value))
             root.left = self.insert(val, root.left)
-            
+
         elif val > root.value:
             print("\n%s Inserted as Right Child of %s" % (val, root.value))
             root.right = self.insert(val, root.right)
-            
-            
+
         root.height = 1 + max(self.height(root.left), self.height(root.right))
         balance = self.balance(root)
 
         if balance > 1 and root.left.value > val:
             print("\nROTATE RIGHT of ", root.value)
             return self.rotateR(root)
-        
+
         if balance < -1 and val > root.right.value:
             print("\nROTATE LEFT of ", root.value)
             return self.rotateL(root)
-        
+
         if balance > 1 and val > root.left.value:
             print("\nROTATE LEFT of ", root.value)
             root.left = self.rotateL(root.left)
             return self.rotateR(root)
-        
+
         if balance < -1 and val < root.right.value:
             print("\nROTATE RIGHT of ", root.value)
             root.right = self.rotateR(root.right)
             return self.rotateL(root)
-        
+
         return root
-                                                                                                                         
+
     def inorder(self, root):
         if root is None:
             return
         self.inorder(root.left)
-        print(root.value, end = '->')
+        print(root.value, end="->")
         self.inorder(root.right)
 
-   
+
 Tree = AVL()
 rt = None
 

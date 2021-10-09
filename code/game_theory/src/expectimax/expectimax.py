@@ -59,7 +59,7 @@ def expectimax(player: int, board, depth_limit, evaluate):
     next_player = board.PLAYER2 if player == board.PLAYER1 else board.PLAYER1
 
     def value(board, depth_limit):
-        """ Evaluate the board at the current state
+        """Evaluate the board at the current state
         Args:
             board (Board): Current board state
             depth_limit (int): Depth limit
@@ -69,7 +69,7 @@ def expectimax(player: int, board, depth_limit, evaluate):
         return evaluate(player, board)
 
     def max_value(board, depth_limit: int) -> float:
-        """ Calculate the maximum value for play if players acts optimally
+        """Calculate the maximum value for play if players acts optimally
         Args:
             player (int): Player token to maximize value of
             board (Board): Current board state
@@ -92,7 +92,7 @@ def expectimax(player: int, board, depth_limit, evaluate):
         return best_value
 
     def min_value(board, depth_limit: int) -> float:
-        """ Calculate a uniformly random move for the minplayer
+        """Calculate a uniformly random move for the minplayer
         Args:
             player (int): Player token to minimize value of
             board (Board): Current board state

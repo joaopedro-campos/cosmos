@@ -5,8 +5,8 @@
 
 class bloomFilter:
     def __init__(self, size=1000, hashFunctions=None):
-        """ Construct a bloom filter with size bits(default: 1000) and the associated hashFunctions.
-            Default hash function is i.e. hash(e)%size.
+        """Construct a bloom filter with size bits(default: 1000) and the associated hashFunctions.
+        Default hash function is i.e. hash(e)%size.
         """
         self.bits = 0
         self.M = size
@@ -18,7 +18,7 @@ class bloomFilter:
             self.hashFunctions = hashFunctions
 
     def add(self, value):
-        """ Insert value in bloom filter"""
+        """Insert value in bloom filter"""
         for hf in self.hashFunctions:
             self.bits |= 1 << hf(value, self.M)
 

@@ -1,12 +1,16 @@
 import numpy as np
-'''numpy stands for numerical python library. It is used for scientific computing in python '''
+
+"""numpy stands for numerical python library. It is used for scientific computing in python """
 import keras.utils
 from keras.datasets import mnist
-''' mnist is a data set which contains images of numbers from 1-8 in 28*28input size'''
+
+""" mnist is a data set which contains images of numbers from 1-8 in 28*28input size"""
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
-''' Demse indicates layers of connected neurons'''
+
+""" Demse indicates layers of connected neurons"""
 from keras.optimizers import Adam
+
 # Adam is a special optimizing algorithm
 
 
@@ -15,7 +19,7 @@ from keras.optimizers import Adam
 
 batch_size = 32
 categories = 10
-epochs = 50 #epochs means no. of times data will be trained
+epochs = 50  # epochs means no. of times data will be trained
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -25,8 +29,8 @@ x_train = x_train.reshape(60000, 784)
 x_test = x_test.reshape(10000, 784)
 
 
-''' The below process is called noramalization. in this we try to scale the
-data so that the process could be fast.'''
+""" The below process is called noramalization. in this we try to scale the
+data so that the process could be fast."""
 
 x_train /= 255
 x_test /= 255
@@ -42,12 +46,14 @@ y_test = keras.utils.to_categorical(y_test, categories)
 model = Sequential()
 model.add(Dense(128, activation="relu", input_shape=(784,)))
 model.add(Dropout(0.2))
-model.add(Dense(128, activation="relu")) 
-''' relu stands for rectified linear unit. it is used as an activation function when output is expected not to be 0 or 1'''
+model.add(Dense(128, activation="relu"))
+""" relu stands for rectified linear unit. it is used as an activation function when output is expected not to be 0 or 1"""
 model.add(Dropout(0.2))
 model.add(Dense(128, activation="relu"))
 model.add(Dropout(0.2))
-model.add(Dense(categories, activation="softmax")) #it is an activation function which returns the highest value
+model.add(
+    Dense(categories, activation="softmax")
+)  # it is an activation function which returns the highest value
 
 
 model.compile(loss="categorical_crossentropy", optimizer=Adam(), metrics=["accuracy"])

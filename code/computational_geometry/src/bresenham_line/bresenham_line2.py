@@ -3,6 +3,7 @@ from graphics import GraphWin
 
 import time
 
+
 def bresenham_line(xa, ya, xb, yb):
     dx = abs(xb - xa)
     dy = abs(yb - ya)
@@ -12,7 +13,7 @@ def bresenham_line(xa, ya, xb, yb):
     x, y = xa, ya
 
     # creating the window
-    win = GraphWin('Bresenham Line', 600, 480)
+    win = GraphWin("Bresenham Line", 600, 480)
 
     # checking the slope if slope > 1
     # then interchange the role of x and y
@@ -37,10 +38,12 @@ def bresenham_line(xa, ya, xb, yb):
         time.sleep(0.01)  # delay for 0.01 secs
         Put_Pixel(win, x, y)  # Plot Pixels To Draw Line
 
+
 def Put_Pixel(win, x, y):
     """Plot a pixel In the window at point (x, y)"""
     pt = Point(x, y)
     pt.draw(win)
+
 
 def main():
     # Taking coordinates from User
@@ -51,6 +54,7 @@ def main():
 
     # Calling Out The function
     Bresenham_Line(xa, ya, xb, yb)
+
 
 # Driver Function
 if __name__ == "__main__":

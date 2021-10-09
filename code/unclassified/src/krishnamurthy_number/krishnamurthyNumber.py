@@ -8,7 +8,7 @@ def factorial(n):
 
 
 def checkKrishnamurthy(n):
-    sumOfDigits = 0   # will hold sum of FACTORIAL of digits
+    sumOfDigits = 0  # will hold sum of FACTORIAL of digits
     temp = n
 
     while temp != 0:
@@ -21,9 +21,9 @@ def checkKrishnamurthy(n):
         temp //= 10
 
     # returns True if number is krishnamurthy
-    return (sumOfDigits == n)
+    return sumOfDigits == n
 
 
-if __name__ == '__main__':
-    n = 40585   # input number
+if __name__ == "__main__":
+    n = 40585  # input number
     print(checkKrishnamurthy(40585))

@@ -1,13 +1,13 @@
 from random import choice
 
-while (True):
+while True:
     print("Rock \nPaper \nScissors!!!!!")
     player1 = input("enter player your choice: ")
     choices = ["ROCK", "PAPER", "SCISSORS"]
     player2 = choice(choices)
     print("SHOOT!!!")
     print(f"player2 played {player2}")
-    if (player1 != player2):
+    if player1 != player2:
         if (player1.upper() == "ROCK") and (player2.upper() == "SCISSORS"):
             print("player1 wins")
         elif (player1.upper() == "SCISSORS") and (player2.upper() == "PAPER"):

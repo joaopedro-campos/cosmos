@@ -17,12 +17,12 @@ class Node:
     """
 
     def __init__(self, data=None, next=None):
-        """ Initializes node structure"""
+        """Initializes node structure"""
         self.data = data
         self.next = next
 
     def __repr__(self):
-        """ Node representation as required"""
+        """Node representation as required"""
         return self.data
 
 

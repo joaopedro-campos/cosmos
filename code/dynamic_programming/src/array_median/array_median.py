@@ -5,8 +5,8 @@ import sys
 
 def median(nums):
     """
-        Calculates the median of a list of numbers.
-        import median from statistics in python 3.4 and above.
+    Calculates the median of a list of numbers.
+    import median from statistics in python 3.4 and above.
     """
     sorted_nums = sorted(nums)
     len_nums = len(nums)

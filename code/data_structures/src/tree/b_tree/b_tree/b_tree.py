@@ -1,6 +1,6 @@
 class BTreeNode(object):
     """A B-Tree Node.
-    
+
     attributes
     =====================
     leaf : boolean, determines whether this node is a leaf.
@@ -31,12 +31,12 @@ class BTree(object):
 
     def search(self, k, x=None):
         """Search the B-Tree for the key k.
-        
+
         args
         =====================
         k : Key to search for
         x : (optional) Node at which to begin search. Can be None, in which case the entire tree is searched.
-        
+
         """
         if isinstance(x, BTreeNode):
             i = 0

@@ -3,6 +3,7 @@
 #       1->   1 i  - add 1 to the ith element of the array A
 #       2->   2 K  - print the Kth odd number of the array A if it exists, else print -1
 
+
 def precalculate(n, array):
     buckets = int(math.ceil(math.sqrt(n)))
     total_odds = [0 for i in range(buckets)]
@@ -14,10 +15,10 @@ def precalculate(n, array):
         for index in range(start, end):
             if array[index] % 2 != 0:
                 total_odds[bucket] += 1
-    return total_odds,bucket_size
+    return total_odds, bucket_size
 
 
-def query_sol(typ, k,total_odds,bucket_size):
+def query_sol(typ, k, total_odds, bucket_size):
     if typ == 1:
         k -= 1
         array[k] += 1
@@ -50,17 +51,18 @@ def query_sol(typ, k,total_odds,bucket_size):
                 break
         return found_at
 
+
 if __name__ == "__main__":
     import math
 
     n, q = list(map(int, input().strip().split(" ")))
     array = list(map(int, input().strip().split(" ")))
 
-    total_odds,bucket_size = precalculate(n, array)
+    total_odds, bucket_size = precalculate(n, array)
 
     for i in range(q):
         typ, k = list(map(int, input().strip().split(" ")))
-        if typ==1:
-            query_sol(typ, k,total_odds,bucket_size)
+        if typ == 1:
+            query_sol(typ, k, total_odds, bucket_size)
         else:
-            print(query_sol(typ, k,total_odds,bucket_size))
+            print(query_sol(typ, k, total_odds, bucket_size))

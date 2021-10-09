@@ -18,10 +18,10 @@ GENERATIONS = 5000
 
 def weighted_choice(items):
     """
-  Chooses a random element from items, where items is a list of tuples in
-  the form (item, weight). weight determines the probability of choosing its
-  respective item. Note: this function is borrowed from ActiveState Recipes.
-  """
+    Chooses a random element from items, where items is a list of tuples in
+    the form (item, weight). weight determines the probability of choosing its
+    respective item. Note: this function is borrowed from ActiveState Recipes.
+    """
     weight_total = sum((item[1] for item in items))
     n = random.uniform(0, weight_total)
     for item, weight in items:
@@ -33,17 +33,17 @@ def weighted_choice(items):
 
 def random_char():
     """
-  Return a random character between ASCII 32 and 126 (i.e. spaces, symbols,
-  letters, and digits). All characters returned will be nicely printable.
-  """
+    Return a random character between ASCII 32 and 126 (i.e. spaces, symbols,
+    letters, and digits). All characters returned will be nicely printable.
+    """
     return chr(int(random.randrange(32, 126, 1)))
 
 
 def random_population():
     """
-  Return a list of POP_SIZE individuals, each randomly generated via iterating
-  DNA_SIZE times to generate a string of random characters with random_char().
-  """
+    Return a list of POP_SIZE individuals, each randomly generated via iterating
+    DNA_SIZE times to generate a string of random characters with random_char().
+    """
     pop = []
     for i in range(POP_SIZE):
         dna = ""
@@ -61,10 +61,10 @@ def random_population():
 
 def fitness(dna):
     """
-  For each gene in the DNA, this function calculates the difference between
-  it and the character in the same position in the OPTIMAL string. These values
-  are summed and then returned.
-  """
+    For each gene in the DNA, this function calculates the difference between
+    it and the character in the same position in the OPTIMAL string. These values
+    are summed and then returned.
+    """
     fitness = 0
     for c in range(DNA_SIZE):
         fitness += abs(ord(dna[c]) - ord(OPTIMAL[c]))
@@ -73,10 +73,10 @@ def fitness(dna):
 
 def mutate(dna):
     """
-  For each gene in the DNA, there is a 1/mutation_chance chance that it will be
-  switched out with a random character. This ensures diversity in the
-  population, and ensures that is difficult to get stuck in local minima.
-  """
+    For each gene in the DNA, there is a 1/mutation_chance chance that it will be
+    switched out with a random character. This ensures diversity in the
+    population, and ensures that is difficult to get stuck in local minima.
+    """
     dna_out = ""
     mutation_chance = 100
     for c in range(DNA_SIZE):
@@ -89,10 +89,10 @@ def mutate(dna):
 
 def crossover(dna1, dna2):
     """
-  Slices both dna1 and dna2 into two parts at a random index within their
-  length and merges them. Both keep their initial sublist up to the crossover
-  index, but their ends are swapped.
-  """
+    Slices both dna1 and dna2 into two parts at a random index within their
+    length and merges them. Both keep their initial sublist up to the crossover
+    index, but their ends are swapped.
+    """
     pos = int(random.random() * DNA_SIZE)
     return (dna1[:pos] + dna2[pos:], dna2[:pos] + dna1[pos:])
 

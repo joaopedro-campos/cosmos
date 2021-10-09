@@ -15,7 +15,7 @@ class Node:
         self.next = next
 
     def __repr__(self):
-        """ Node representation as required"""
+        """Node representation as required"""
         return self.data
 
 
