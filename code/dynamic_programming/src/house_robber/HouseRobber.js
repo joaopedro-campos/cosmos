@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function(nums) {
+var rob = function (nums) {
   // Tag: DP
   const dp = [];
   dp[0] = 0;

@@ -41,7 +41,7 @@ function longestPalindromicSubstring(str){
       return maxp; // return the answer
 }
 console.log(longest_palindrome("abccbatry")); // print the solution
-}
+
 
 /*
  Output String : abccba

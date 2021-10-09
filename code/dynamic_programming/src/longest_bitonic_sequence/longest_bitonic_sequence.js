@@ -57,21 +57,6 @@ function longestBitonicSubsequence(inputArray) {
 
 console.log(
   `Longest Bitonic Subsequence Length - ${longestBitonicSubsequence([
-    0,
-    8,
-    4,
-    12,
-    2,
-    10,
-    6,
-    14,
-    1,
-    9,
-    5,
-    13,
-    3,
-    11,
-    7,
-    15
+    0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15,
   ])}`
 );

@@ -12,9 +12,11 @@ function josephus(n, k) {
 function test(n, k, expected) {
   const result = josephus(n, k);
   if (result == expected) {
-    console.log('PASS');
+    console.log("PASS");
   } else {
-    console.log(`FAIL: josephus(${n}, ${k}) result ${result} does not match ${expected}`);
+    console.log(
+      `FAIL: josephus(${n}, ${k}) result ${result} does not match ${expected}`
+    );
   }
 }
 

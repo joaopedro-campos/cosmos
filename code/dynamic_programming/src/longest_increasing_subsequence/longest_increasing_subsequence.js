@@ -32,14 +32,6 @@ function longestIncreasingSubsequence(inputArray) {
 
 console.log(
   `Longest Increasing Subsequence Length - ${longestIncreasingSubsequence([
-    10,
-    22,
-    9,
-    33,
-    21,
-    50,
-    41,
-    60,
-    80
+    10, 22, 9, 33, 21, 50, 41, 60, 80,
   ])}`
 );
