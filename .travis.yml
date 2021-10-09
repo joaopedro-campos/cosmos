@@ -61,7 +61,7 @@ matrix:
         - "3.6"
       script:
         - pip install namanager
-        - namanager -s third_party/namanager_settings.json --required
+        - namanager -s third_party/namanager_settings.json
 
     # Check formatting of Python code
     - os: linux
