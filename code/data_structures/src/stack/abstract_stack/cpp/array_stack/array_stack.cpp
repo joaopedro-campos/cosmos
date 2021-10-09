@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-#include "../istack.h"
+#include "./istack.h"
 #include "arraystack.h"
 
 int main()

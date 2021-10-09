@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <iostream>
-#include "./../../src/baconian_cipher/baconian.cpp"
+#include "./../../src/baconian_cipher/baconian_cipher.cpp"
 
 // Part of Cosmos by OpenGenus Foundation
 int main()
