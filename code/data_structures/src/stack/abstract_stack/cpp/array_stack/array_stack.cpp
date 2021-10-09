@@ -1,8 +1,8 @@
 
 #include <iostream>
 
-#include "./istack.h"
-#include "arraystack.h"
+#include "../is_stack.h"
+#include "array_stack.h"
 
 int main()
 {

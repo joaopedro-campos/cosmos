@@ -9,7 +9,7 @@
  */
 
 #include <cmath>
-#include "LuVector.hpp"
+#include "luvector.hpp"
 using Vec3 = LUV::LuVector<3, double>;
 
 // Returns the solid angle of sphere cap contended by a cone.

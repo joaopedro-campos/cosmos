@@ -44,7 +44,9 @@ matrix:
     - os: linux
       language: cpp
       script:
-        ./scripts/build_cpp.sh
+        - chmod +x ./scripts/install_opencv.sh
+        - ./scripts/install_opencv.sh
+        - ./scripts/build_cpp.sh
       addons:
         apt:
           sources:
